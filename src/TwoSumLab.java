@@ -11,12 +11,9 @@
 
 public class TwoSumLab {
 
-    //brute force
+    //brute force - return the indices of the two numbers whose sum is equal to a given target.
     public int[] twoSum(int[] num, int sum)
     {
-        int firstIndex = -1;
-        int secondIndex = -1;
-        int count = 0;
         int[] onlyOneValidAnswer = new int[]{-1,-1};
         for(int i = 0; i < num.length; i++)
         {
@@ -26,12 +23,8 @@ public class TwoSumLab {
                 {
                     if((num[i] + num[j]) == sum)
                     {
-                        firstIndex = j;
-                        secondIndex = i;
-                        count++;
-                        count++;
-                        onlyOneValidAnswer[0] = firstIndex;
-                        onlyOneValidAnswer[1] = secondIndex;
+                        onlyOneValidAnswer[0] = j;
+                        onlyOneValidAnswer[1] = i;
                     }
                 }
             }
@@ -65,12 +58,13 @@ public class TwoSumLab {
         //Example 1
         int[] nums1 = new int[]{2,12,8,7};
         int target = 9;
-        System.out.println(tSL.print(tSL.twoSum(nums1,target)));
+        System.out.println("Given nums: " + tSL.print(nums1)  + " target = " + target);
+        System.out.println("output: " + "[" + tSL.print(tSL.twoSum(nums1,target)) + "]");
 
         //Example 2
         int[] nums2 = new int[]{1,13,18,20,30};
         target = 40;
-        System.out.println(tSL.print(tSL.twoSum(nums2,target)));
-
+        System.out.println("Given nums: " + tSL.print(nums2)  + " target = " + target);
+        System.out.println("output: " + "[" + tSL.print(tSL.twoSum(nums2,target)) + "]");
     }
 }
